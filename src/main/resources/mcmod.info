@@ -1,0 +1,16 @@
+[
+{
+  "modid": "werkeschlaunichtgefestigtmending",
+  "name": "WerkeSchlauNichtGefestigtMending",
+  "description": "Werke Schlau Nicht Gefestigt Mending",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ico277"],
+  "credits": "The Forge and FML guys, for making this example also ChatGPT",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
