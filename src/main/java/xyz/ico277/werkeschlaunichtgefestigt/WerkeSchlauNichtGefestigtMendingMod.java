@@ -5,7 +5,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.apache.logging.log4j.Logger;
+import xyz.ico277.werkeschlaunichtgefestigt.commands.LizenzCommand;
 import xyz.ico277.werkeschlaunichtgefestigt.events.BudderBeiDeFischeEvent;
 import xyz.ico277.werkeschlaunichtgefestigt.events.VillagerEvent;
 
@@ -14,7 +16,7 @@ public class WerkeSchlauNichtGefestigtMendingMod
 {
     public static final String MODID = "werkeschlaunichtgefestigtmending";
     public static final String NAME = "WerkeSchlauNichtGefestigtMending";
-    public static final String VERSION = "1.0-release";
+    public static final String VERSION = "1.1-release";
 
     private static Logger logger;
     public static WerkeSchlauNichtGefestigtMendingMod instance;
@@ -37,8 +39,10 @@ public class WerkeSchlauNichtGefestigtMendingMod
         logger.info("Events wurden registriert");
     }
 
-
-
-
-
+    @EventHandler
+    public void onServerStarting(FMLServerStartingEvent event) {
+        logger.info("Registriere Commands...");
+        event.registerServerCommand(new LizenzCommand());
+        logger.info("Commands wurden registriert");
+    }
 }
